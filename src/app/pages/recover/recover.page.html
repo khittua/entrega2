@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="flex"> 
+      <ion-icon size="large" name="arrow-back-circle-outline" (click)="goToLogin()"></ion-icon>
+      <ion-title>
+        Recuperar contraseña
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-grid [fixed]="true">
+  <ion-col></ion-col>
+  
+  <ion-col>
+  <ion-content class="ion-padding custom-background" [fullscreen]="true">
+    <div *ngIf="noUserData" class="message">
+      <p>No hay ningún usuario registrado. Por favor, regístrese primero.</p>
+    </div>
+      <div *ngIf="!noUserData" class="container">
+        <div class="center">
+        <form action="" class="formulario">
+        <h1></h1> 
+        <div class="container2 aaaa" >
+          <ion-item>
+            <ion-label color="#82fad2b6;" position="floating">Contraseña nueva</ion-label>
+            <ion-input [(ngModel)]="nuevaContrasena" minlength="4" maxlength="4" required
+                       name="nuevaContrasena" color="#82fad2b6;" type="password" inputmode="numeric"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label color="#82fad2b6;" position="floating">Repita contraseña</ion-label>
+            <ion-input [(ngModel)]="confirmarContrasena" minlength="4" maxlength="4" required
+                       name="confirmarContrasena" color="#82fad2b6;" type="password" inputmode="numeric"></ion-input>
+          </ion-item>
+        
+          <ion-button class="loginb" expand="block" fill="clear" (click)="recuperarContrasena()">Recuperar</ion-button>
+          
+          
+          </div>
+        </form>
+        </div>
+      </div>
+  
+  
+  </ion-content>
+  </ion-col>
+  <ion-col></ion-col>
+  
+  </ion-grid>

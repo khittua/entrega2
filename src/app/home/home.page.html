@@ -1,10 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+
+    <div class="flex">
+      <ion-icon size="large" name="arrow-back-circle-outline" (click)="goToLogin()"></ion-icon>
+      <ion-title class="title-animation">
+        SkeletonAPP
+      </ion-title>
+
+    </div>
   </ion-toolbar>
 </ion-header>
+
+
+
+
+<ion-grid [fixed]="true">
+<ion-col></ion-col>
+  
+<ion-col>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -13,8 +27,75 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container">
+    <div class="center">
+    <form action="" class="formulario" [formGroup]="NombreForm">
+    <h1>Registro</h1>
+    <div class="container2 aaaa" >
+
+    <ion-item [class.slide-animation]="slideAnimationActive" [class.invalid]="usuarioInput.invalid && usuarioInput.touched">
+      <ion-label color="#82fad2b6;" position="floating">Usuario</ion-label>
+      <ion-input  #usuarioInput="ngModel" minlength="3" maxlength="20" required
+                  [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" name="usuario" color="#82fad2b6;"></ion-input>
+    </ion-item>
+
+    <ion-item [class.slide-animation]="slideAnimationActive" [class.invalid]="passwordInput.invalid && passwordInput.touched">
+      <ion-label color="#82fad2b6;" position="floating">Contraseña</ion-label>
+      <ion-input  #passwordInput="ngModel" minlength="4" maxlength="4"  required
+                  [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="password" color="#82fad2b6;" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item [class.slide-animation]="slideAnimationActive" [class.invalid]="nombreInput.invalid && nombreInput.touched">
+      <ion-label color="#82fad2b6;" position="floating">Nombre</ion-label>
+      <ion-input  #nombreInput="ngModel" minlength="3" maxlength="20" required
+                 [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" name="nombre" color="#82fad2b6;"></ion-input>
+    </ion-item>
+
+    <ion-item [class.slide-animation]="slideAnimationActive" [class.invalid]="apellidoInput.invalid && apellidoInput.touched">
+      <ion-label color="#82fad2b6;" position="floating">Apellido</ion-label>
+      <ion-input  #apellidoInput="ngModel" minlength="3" maxlength="20" required
+                 [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}" name="apellido" color="#82fad2b6;"></ion-input>
+    </ion-item>
+
+    <ion-item [class.slide-animation]="slideAnimationActive" [class.invalid]="rutInput.invalid && rutInput.touched">
+      <ion-label color="#82fad2b6;" position="floating">Rut</ion-label>
+      <ion-input  #rutInput="ngModel" minlength="3" maxlength="20" required
+                 [(ngModel)]="rut" [ngModelOptions]="{standalone: true}" name="rut" color="#82fad2b6;"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Región</ion-label>
+      <ion-select [(ngModel)]="regionSeleccionada" (ionChange)="onRegionSelected(+regionSeleccionada)" [ngModelOptions]="{standalone: true}" >
+        <ion-select-option *ngFor="let region of regiones" [value]="region.id">{{ region.nombre }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Comuna</ion-label>
+      <ion-select [(ngModel)]="comunaSeleccionada" [ngModelOptions]="{standalone: true}" >
+        <ion-select-option *ngFor="let comuna of comunas" [value]="comuna.id">{{ comuna.nombre }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="bflex">
+      <ion-button class="botonesL" expand="block" fill="clear" (click)="limpiarCampos()" >Limpiar</ion-button>
+      <ion-button class="botonesR" expand="block" fill="clear" (click)="register()">Registrarse</ion-button>
+    </div>
+  </div>
+</form>
+  </div>    
   </div>
 </ion-content>
+</ion-col>
+<ion-col></ion-col>
+
+</ion-grid>
+
+<ion-footer class="ion-no-border" >
+  <div class="footer">
+    <div class="text">
+      <strong>Aplicación creada por khittua </strong>
+      <a href=""></a>
+    </div>
+  </div>
+</ion-footer>
