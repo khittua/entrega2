@@ -1,0 +1,113 @@
+
+  
+  .formulario {
+    margin: 0;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+.aaaa{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.formulario{
+  width: 80%;
+  padding: 10px;
+  
+
+}
+h1{
+  color: rgb(226, 235, 243);
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 3px 8px #000000;
+}
+ion-item{
+  color: #82fad2b6;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: solid;
+  border-width: 2px;
+  border-color: #82fad2b6;
+  box-shadow: 1px 3px 8px #000000;
+}
+.loginb{
+  color: white;
+  height: 56px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #82fad2b6;
+  box-shadow: 1px 3px 8px #000000;
+}
+.forgot{
+  color: aliceblue;
+  font-size: x-small;
+}
+.register{
+  text-decoration: underline;
+  color: #82fad2b6;
+  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+ion-checkbox{
+  margin-top: 15px;
+  --checkbox-background-checked: #82fad2b6;
+  color: rgb(226, 235, 243);
+  text-shadow: 1px 3px 8px #000000;
+}
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid #82fad2b6;
+  box-shadow: 1px 3px 8px #000000;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+ 
+  
+  
+}
+.footer label{
+  color: aliceblue;
+}
+.footer a{
+  
+  margin-left: 1%;
+  color: #82fad2;
+  text-decoration: none;
+}
+ion-footer{
+  box-shadow: 0px -3px 8px #000000 !important; 
+  background-color: #82fad2b6;
+  height: 10%;
+}
+
+.text{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  align-items: center;
+}
+
+ion-grid {
+  --ion-grid-width: 50%;
+  --ion-grid-width-xs: 95%;
+  --ion-grid-width-sm: 60%;
+  --ion-grid-width-md: 40%;
+  --ion-grid-width-lg: 40%;
+  --ion-grid-width-xl: 40%;
+}
+ion-input:invalid:focus {
+  background-image: linear-gradient(pink, lightgreen);
+}
+
+ion-label.ion-color-primary {
+  color: #82fad2b6;
+}

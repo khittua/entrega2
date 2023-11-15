@@ -1,0 +1,30 @@
+.scanner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.39); /* Fondo semitransparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    z-index: 2; /* Asegúrate de que el overlay esté sobre el escáner */
+  }
+  
+  .scanner-overlay h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .scanner-overlay p {
+    font-size: 16px;
+  }
+  .scanner-overlay.hidden {
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 2s; 
+  }
