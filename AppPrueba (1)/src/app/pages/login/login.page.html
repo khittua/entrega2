@@ -1,0 +1,45 @@
+<ion-grid [fixed]="true">
+<ion-col></ion-col>
+
+<ion-col>
+<ion-content class="ion-padding custom-background" [fullscreen]="true">
+ 
+    <div class="container">
+      <div class="center">
+      <form action="" class="formulario" [formGroup]="RegisterForm">
+      <h1>Login</h1> 
+      <div class="container2 aaaa" >
+        <ion-item [class.invalid]="usuarioInput.invalid && usuarioInput.touched">
+          <ion-label color="#82fad2b6;" position="floating">Usuario</ion-label>
+          <ion-input #usuarioInput="ngModel" minlength="3" maxlength="8" required
+                     [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" name="usuario" color="#82fad2b6;"></ion-input>
+        </ion-item>
+        <ion-item [class.invalid]="passwordInput.invalid && passwordInput.touched">
+          <ion-label color="#82fad2b6;" position="floating">Contraseña</ion-label>
+          <ion-input #passwordInput="ngModel" minlength="4" maxlength="4" required
+                     [(ngModel)]="password" [ngModelOptions]="{standalone: true}"name="password" color="#82fad2b6;" type="password" inputmode="numeric"></ion-input>
+        </ion-item>
+        <ion-checkbox labelPlacement="end">Recordar Contraseña</ion-checkbox>
+        <ion-button class="loginb" (click)="submit()" expand="block" fill="clear">Iniciar Sesión</ion-button>
+        <ion-button class="forgot"  (click)="recover()" expand="block" fill="clear">Olvidaste tu contraseña?</ion-button>
+        
+        </div>
+      </form>
+      </div>
+    </div>
+
+
+</ion-content>
+</ion-col>
+<ion-col></ion-col>
+
+</ion-grid>
+<ion-footer class="ion-no-border" >
+  <div class="footer">
+    <div class="text">
+      <label for="">Aún no tienes cuenta? </label>
+      <ion-button class="register" (click)="register()" expand="block" fill="clear">Regístrate</ion-button>
+    </div>
+  </div>
+</ion-footer>
+

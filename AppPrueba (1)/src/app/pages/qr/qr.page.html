@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>qr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <zxing-scanner #scanner start="true" (scanSuccess)="handeQrCodeResult($event)"[autofocusEnabled]="true"
+  [device]="currentDevice"
+  scannerEnabled="true"
+  
+  [tryHarder]="true" [formats]="allowedFormats"></zxing-scanner>
+
+  <div class="scanner-overlay" *ngIf="showOverlay">
+    <h2>Escanea el código QR</h2>
+    <p>Apunta la cámara al código QR para registrar la clase.</p>
+  </div>
+  
+
+</ion-content>
+ 
