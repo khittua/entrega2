@@ -38,7 +38,7 @@ export class ClasePage implements OnInit {
   goToLogin() {
     this.router.navigate(['/login']);
   }
-  ngOnInit() {
+  async ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.selfieImageUrl = params.get('selfieImageUrl');
     });
@@ -60,20 +60,17 @@ export class ClasePage implements OnInit {
       this.datosClase = params['datosClase'];
     });
 
-    const userDataString = localStorage.getItem('userData');
+    const userData = await this.storage.get('userData');
 
-      if (userDataString) {
-
-        const userData = JSON.parse(userDataString);
-
-        this.nombre = userData.nombre;
-        this.apellido = userData.apellido;
-        this.rut = userData.rut;
-        this.comuna = userData.comuna;
-        this.region = userData.region
-      }
+  if (userData) {
+    this.nombre = userData.nombre;
+    this.apellido = userData.apellido;
+    this.rut = userData.rut;
+    this.comuna = userData.comuna;
+    this.region = userData.region;
   }
-  
-  
+}
+
+
 
 }
